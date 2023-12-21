@@ -6,6 +6,9 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import Milvus
 
 import nest_asyncio
+from dotenv import load_dotenv
+
+load_dotenv()
 
 nest_asyncio.apply()
 

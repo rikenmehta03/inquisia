@@ -15,4 +15,4 @@ COPY . /inquisia
 
 RUN pip install .
 
-ENTRYPOINT ["/bin/bash"]
+CMD ["/bin/bash"]
