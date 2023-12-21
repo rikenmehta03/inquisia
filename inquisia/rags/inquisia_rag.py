@@ -25,7 +25,7 @@ class InquisiaRAG(RAGInterface):
     Inquisia implementation of the RAGInterface.
     """
 
-    knowledge_base: str = "test_collection_1"
+    knowledge_base: str
     vector_store: Optional[VectorStore] = None
     model: str = "gpt-4-1106-preview"
 

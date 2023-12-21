@@ -17,7 +17,7 @@ class KnowledgeBaseQA(QAInterface):
     def __init__(
         self,
         model: str = "gpt-4-1106-preview",
-        knowledge_base: str = "test_collection_1",
+        knowledge_base: str = "test_kb",
     ):
         self.knowledge_qa = InquisiaRAG(model=model, knowledge_base=knowledge_base)
 

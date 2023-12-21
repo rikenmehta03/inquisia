@@ -30,6 +30,6 @@ chunked_documents = text_splitter.split_documents(docs_transformed)
 vector_db = Milvus.from_documents(
     chunked_documents,
     OpenAIEmbeddings(),
-    collection_name="test_kb1",
+    collection_name="test_kb",
     connection_args={"host": "127.0.0.1", "port": "19530"},
 )

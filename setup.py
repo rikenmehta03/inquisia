@@ -24,5 +24,5 @@ setup(
     keywords="llm, rag, chat, productivity, gpt, langchain, ai",
     packages=find_packages(),
     python_requires=">=3.8",
-    install_requires=["torch"],
+    install_requires=[],
 )
