@@ -5,6 +5,8 @@ This package contains backend framework specifically implementing Retrieval Augm
 
 ## Features
 - Creation and maintainance of different knowledge bases (Group of documents, webpages etc.)
+    - Parse documents (pdf, text, csv etc)
+    - Crowle webpages
 - Query/answering system using LLM
 - Support for different LLM models (OpenAI, HuggingFace etc)
 - Containerized docker image
