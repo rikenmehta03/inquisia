@@ -5,6 +5,7 @@
 .gitignore
 .dockerignore
 *.yml
+.env
 # *.md
 Dockerfile
 
