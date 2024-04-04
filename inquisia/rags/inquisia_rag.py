@@ -48,11 +48,17 @@ class InquisiaRAG(RAGInterface):
             collection_name=self.knowledge_base,
         )
 
-    def _create_llm(self) -> BaseLLM:
+    def _create_llm(self, streaming=False, callbacks=None) -> BaseLLM:
         """
         Create a LLM with the given parameters
         """
-        return ChatLiteLLM(temperature=0, max_tokens=256, model=self.model)
+        return ChatLiteLLM(
+            temperature=0,
+            max_tokens=256,
+            model=self.model,
+            streaming=streaming,
+            callbacks=callbacks,
+        )
 
     def _create_prompt_template(self):
         system_template = """ When answering use markdown or any other techniques to display the content in a nice and aerated way.
@@ -84,8 +90,8 @@ class InquisiaRAG(RAGInterface):
         Standalone question:"""
         return PromptTemplate.from_template(_template)
 
-    def get_doc_chain(self):
-        answering_llm = self._create_llm()
+    def get_doc_chain(self, streaming=False, callbacks=None):
+        answering_llm = self._create_llm(streaming=streaming, callbacks=callbacks)
 
         doc_chain = load_qa_chain(
             answering_llm, chain_type="stuff", prompt=self._create_prompt_template()
